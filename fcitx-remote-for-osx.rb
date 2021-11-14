@@ -1,19 +1,26 @@
 class FcitxRemoteForOsx < Formula
-  desc "handle input method in command-line"
-  homepage "https://github.com/CodeFalling/fcitx-remote-for-osx"
-  url "https://github.com/CodeFalling/fcitx-remote-for-osx/archive/0.3.0.tar.gz"
-  sha256 "b4490a6a0db3c28ce3ddbe89dd038f5ab404744539adc5520eab1a1a39819de6"
-  
-  
-  option "with-input-method=",
-	  "Select input method: general(default), baidu-pinyin, baidu-wubi, " \
-	  "sogou-pinyin, qq-wubi, squirrel-rime, squirrel-rime-upstream, osx-pinyin"
+  desc "Handle input method in command-line"
+  homepage "https://github.com/peng1999/fcitx-remote-for-osx"
+  url "https://github.com/peng1999/fcitx-remote-for-osx/archive/refs/heads/master.tar.gz"
+  version "master"
+  sha256 "c8dabf9a7e61abf2501e42137e0b72a5fa84eca7c75ad7294f53cbcba35af0c0"
+
+  INPUT_METHOD = %w[baidu-pinyin baidu-wubi sogou-pinyin qq-wubi squirrel-rime osx-pinyin].freeze
+  INPUT_METHOD.each do |im|
+    option "with-#{im}", "Build fcitx-remote for osx with #{im} support"
+  end
 
   def install
-    input_method = ARGV.value("with-input-method") || "general"
-	  system "./build.py", "build", input_method
+    input_method = nil
+    INPUT_METHOD.each do |im|
+      input_method = im if build.with? im
+    end
+
+    input_method ||= "baidu-pinyin"
+
+    system "./build.py", "build", input_method
     bin.install "fcitx-remote-#{input_method}"
-	  bin.install_symlink "fcitx-remote-#{input_method}" => "fcitx-remote"
+    bin.install_symlink "fcitx-remote-#{input_method}" => "fcitx-remote"
   end
 
   test do
