@@ -2,8 +2,7 @@ class FcitxRemoteForOsx < Formula
   desc "Handle input method in command-line"
   homepage "https://github.com/peng1999/fcitx-remote-for-osx"
   url "https://github.com/peng1999/fcitx-remote-for-osx/archive/refs/heads/master.tar.gz"
-  version "master"
-  sha256 "c8dabf9a7e61abf2501e42137e0b72a5fa84eca7c75ad7294f53cbcba35af0c0"
+  version "latest"
 
   INPUT_METHOD = %w[baidu-pinyin baidu-wubi sogou-pinyin qq-wubi squirrel-rime osx-pinyin].freeze
   INPUT_METHOD.each do |im|
