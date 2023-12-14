@@ -1,8 +1,8 @@
 cask "font-source-han-serif-otc" do
   version "2.002"
-  sha256 "6e696a382d12cf7c11d29573101af7ce5adf698f2489eac052dab4772a5d4ffa"
+  sha256 "3868cbad34109776e2bbf4ec6caaccdab46a41389a720b4be191af4268784df1"
 
-  url "https://github.com/adobe-fonts/source-han-serif/releases/download/#{version}R/03_SourceHanSerifOTC.zip"
+  url "https://github.com/adobe-fonts/source-han-serif/releases/download/#{version}R/01_SourceHanSerif.ttc.zip"
   name "Source Han Sans OTC"
   desc "OpenType/CFF Pan-CJK fonts"
   homepage "https://github.com/adobe-fonts/source-han-serif"
