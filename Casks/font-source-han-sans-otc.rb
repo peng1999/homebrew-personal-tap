@@ -4,7 +4,14 @@ cask "font-source-han-sans-otc" do
 
   url "https://github.com/adobe-fonts/source-han-sans/releases/download/#{version}R/SourceHanSans.ttc.zip"
   name "Source Han Sans OTC"
+  desc "OpenType/CFF Pan-CJK fonts"
   homepage "https://github.com/adobe-fonts/source-han-sans"
+
+  livecheck do
+    url "https://github.com/adobe-fonts/source-han-sans/releases/latest"
+    strategy :page_match
+    regex(%r{tag/(\d+(?:\.\d+)*)}i)
+  end
 
   font "SourceHanSans.ttc"
 end
