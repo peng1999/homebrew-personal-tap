@@ -1,12 +1,11 @@
-# homebrew-fcitx-remote-for-osx
+# Pg999w's Personal Tap
 
-brew tap for https://github.com/dangxuandev/fcitx-remote-for-osx
+My personal formulas and casks
 
 # Usage
 
 ```shell
-brew tap dangxuandev/fcitx-remote-for-osx
-brew install dangxuandev/fcitx-remote-for-osx/fcitx-remote-for-osx --with-input-mothod=osx-pinyin
+brew tap peng1999/personal-tap
+brew install fcitx-remote-for-osx --with-input-mothod=macos-pinyin
 ```
 
-You can use `brew info dangxuandev/fcitx-remote-for-osx/fcitx-remote-for-osx` to get input method support info
