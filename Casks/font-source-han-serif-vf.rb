@@ -1,5 +1,5 @@
 cask "font-source-han-serif-vf" do
-  version "2.002"
+  version "2.003"
   sha256 ""
 
   url "https://github.com/adobe-fonts/source-han-serif/raw/#{version}R/Variable/OTC/SourceHanSerif-VF.otf.ttc"
