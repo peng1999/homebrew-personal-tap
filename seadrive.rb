@@ -14,8 +14,7 @@ class Seadrive < Formula
       odie "This formula is only for Linux."
     end
     chmod 0755, "SeaDrive-x86_64-#{version}.AppImage"
-    mv "SeaDrive-x86_64-#{version}.AppImage", "seadrive"
-    bin.write_exec_script "seadrive"
+    bin.install "SeaDrive-x86_64-#{version}.AppImage" => "seadrive"
   end
 
   test do
